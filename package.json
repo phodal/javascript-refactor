@@ -2,7 +2,7 @@
   "name": "artisanstack",
   "version": "0.0.0",
   "main": "dist/artisanstack.min.js",
-  "description": "Next-Generation Tech Blog/Presentation Framework",
+  "description": "",
   "repository": {
     "type": "git",
     "url": "git://github.com/phodal/artisanstack.git"
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "grunt test;"
   },
-  "keywords": ["Presentation", "MOOC", "artisanstack", "Presentation Framework", "Echoes"],
+  "keywords": [],
   "author": "Phodal Huang",
   "license": "MIT",
   "readmeFilename": "README.md",
