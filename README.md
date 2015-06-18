@@ -53,6 +53,12 @@ ps: 在ThoughtWorks，写出功能代码只是走了一半的路，``红``->``�
 
 Enjoy it!
 
+##订阅
+
+请到[https://github.com/artisanstack/summary](https://github.com/artisanstack/summary)
+
+点击右上角的``watch``即可订阅。
+
 ##License##
 
 © 2015 [Phodal Huang](http://www.phodal.com). This code is distributed under the MIT license. See `LICENSE.txt` in this directory.
