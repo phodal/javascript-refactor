@@ -3,19 +3,10 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 
 		pkg: grunt.file.readJSON('package.json'),
-		connect: {
-			server: {
-				options: {
-					port: 8000,
-					base: '.'
-				}
-			}
-		},
 
 		jasmine: {
 			src: 'dist/artisanstack.js',
 			options: {
-				host: "http://0.0.0.0:8000",
 				vendor: ['node_modules/jasmine-ajax/lib/mock-ajax.js'],
 				specs: ['specs/*-spec.js','specs/3rd-party/*-spec.js'],
 				template: require('grunt-template-jasmine-istanbul'),
@@ -87,9 +78,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-connect');
 
-	grunt.registerTask('test', ['jshint', 'connect', 'jasmine']);
-	grunt.registerTask('default', ['concat', 'connect', 'jshint', 'jasmine', 'uglify']);
+	grunt.registerTask('test', ['jshint', 'jasmine']);
+	grunt.registerTask('default', ['concat', 'jshint', 'jasmine', 'uglify']);
 
 };
