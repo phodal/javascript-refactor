@@ -55,6 +55,10 @@ Enjoy it!
 
 ##订阅
 
+QQ交流群: 321689806
+
+推荐IDE: WebStorm
+
 请到[https://github.com/artisanstack/summary](https://github.com/artisanstack/summary)
 
 点击右上角的``watch``即可订阅。
