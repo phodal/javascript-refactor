@@ -48,9 +48,9 @@ function listHandler(mdStr, execStr) {
     helper = execStr[0].split('\n'),
     status = 0,
     indent = false,
-    i,
     line = 0,
-    nstatus = 0;
+    nstatus = 0,
+    i;
 
   //ordered or unordered lists
   if ((execStr[0].trim().substr(0, 1) === '*') || (execStr[0].trim().substr(0, 1) === '-')) {
