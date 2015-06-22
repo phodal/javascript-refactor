@@ -81,6 +81,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', ['jshint', 'jasmine']);
 	grunt.registerTask('default', ['concat', 'jshint', 'jasmine', 'uglify']);
-  grunt.registerTask('build-skip-test', ['concat', 'jshint', 'uglify'])
+	grunt.registerTask('build-skip-test', ['concat', 'jshint', 'uglify'])
 
 };

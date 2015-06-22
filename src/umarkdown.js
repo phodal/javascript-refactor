@@ -40,6 +40,7 @@ function headlineHandler(mdStr, execStr) {
 }
 
 //handle lists
+//TODO-large method
 function listHandler(mdStr, execStr) {
   var casca = 0,
     helper1 = [],
@@ -101,6 +102,7 @@ function listHandler(mdStr, execStr) {
 }
 
 //handler table
+//TODO-another large method
 function tableHandler(mdStr, execStr, strict) {
   var replaceStr = '<table><tr>';
   var helper = execStr[1].split('|');
@@ -193,6 +195,30 @@ function urlHandler(mdStr, execStr, strict) {
 }
 
 //handle reference links
+function refLinkHandler(mdStr, execStr, strict) {
+    var helper, trashgc = [];
+    var helper1 = new RegExp('\\[' + execStr[2] + '\\]: ?([^ \n]+)', "gi");
+    if ((helper = helper1.exec(mdStr)) !== null) {
+        mdStr = mdStr.replace(execStr[0], '<a ' + addMarkdownClass(helper[1], strict) + 'href="' + helper[1] + '">' + execStr[1] + '</a>');
+        trashgc.push(helper[0]);
+    }
+    return {
+        str: mdStr,
+        trashgc: trashgc
+    };
+}
+
+//handle smlinks
+function smlinkHandler(str, execStr, strict) {
+    var urlObj = {
+        t: 'https://twitter.com/',
+        gh: 'https://github.com/',
+        fb: 'https://www.facebook.com/',
+        gp: 'https://plus.google.com/+'
+    };
+    var replaceStr = urlObj[execStr[2]] + execStr[1];
+    return str.replace(execStr[0], '<a ' + addMarkdownClass(replaceStr, strict) + 'href="' + replaceStr + '">' + execStr[1] + '</a>');
+}
 
 //handle hr
 function hrHandler(mdStr, execStr) {
@@ -224,7 +250,7 @@ function addMarkdownClass(str, strict) {
 
 //micro markdown main parse function
 function parse(str, strict) {
-  var helper, helper1, replaceStr, execStr, trashgc = [];
+  var execStr, trashgc = [];
 
   str = '\n' + str + '\n';
 
@@ -253,9 +279,12 @@ function parse(str, strict) {
     str = tableHandler(str, execStr, strict);
   }
 
-  /* bold and italic */
-  while ((execStr = regExpObject.boldItalic.exec(str)) !== null) {
-    str = boldItalicHandler(str, execStr);
+  /* bold and italic
+   * TODO-why loop 3 times? should there a better idea? */
+  for (var i = 0; i < 3; i++) {
+    while ((execStr = regExpObject.boldItalic.exec(str)) !== null) {
+      str = boldItalicHandler(str, execStr);
+    }
   }
 
   /* links */
@@ -275,31 +304,20 @@ function parse(str, strict) {
 
   /* reference links */
   while ((execStr = regExpObject.reflinks.exec(str)) !== null) {
-    helper1 = new RegExp('\\[' + execStr[2] + '\\]: ?([^ \n]+)', "gi");
-    if ((helper = helper1.exec(str)) !== null) {
-      str = str.replace(execStr[0], '<a ' + addMarkdownClass(helper[1], strict) + 'href="' + helper[1] + '">' + execStr[1] + '</a>');
-      trashgc.push(helper[0]);
-    }
+      var _ret = refLinkHandler(str, execStr, strict);
+      str = _ret.str;
+      trashgc = _ret.trashgc;
   }
-  for (var i = 0; i < trashgc.length; i++) {
+
+  //  wtf?
+  //TODO-remove this forLoop
+  for (i = 0; i < trashgc.length; i++) {
     str = str.replace(trashgc[i], '');
   }
+
+  /* smlinks */
   while ((execStr = regExpObject.smlinks.exec(str)) !== null) {
-    switch (execStr[2]) {
-      case 't':
-        replaceStr = 'https://twitter.com/' + execStr[1];
-        break;
-      case 'gh':
-        replaceStr = 'https://github.com/' + execStr[1];
-        break;
-      case 'fb':
-        replaceStr = 'https://www.facebook.com/' + execStr[1];
-        break;
-      case 'gp':
-        replaceStr = 'https://plus.google.com/+' + execStr[1];
-        break;
-    }
-    str = str.replace(execStr[0], '<a ' + addMarkdownClass(replaceStr, strict) + 'href="' + replaceStr + '">' + execStr[1] + '</a>');
+      str = smlinkHandler(str, execStr, strict);
   }
 
   /* horizontal line */
@@ -311,6 +329,3 @@ function parse(str, strict) {
   //then return parsed markdown string
   return str.replace(/ {2,}[\n]{1,}/gmi, '<br/><br/>');
 }
-
-//interface
-ArtisanStack.md.parse = parse;
