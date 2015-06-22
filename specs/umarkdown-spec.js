@@ -74,8 +74,10 @@ describe("Markdown", function () {
 			.toBe('<table><tr><th align="right">this</th><th align="center">is a</th><th align="left">table</th></tr><tr><td align="right">with</td><td align="center">sample</td><td align="left">content</td></tr>\n</table>');
 	});
 
-	it("should parse h1~h3", function () {
-		expect(ArtisanStack.md.mmdCSSclass('', '')).toBe('');
+	it("should add the correct CSS class", function () {
+		expect(ArtisanStack.md.addMarkdownClass('', '')).toBe('');
+		expect(ArtisanStack.md.addMarkdownClass('894mayo.cc', false)).toBe('');
+		expect(ArtisanStack.md.addMarkdownClass('http://894mayo.cc', false)).toBe('class="mmd_894mayocc" ');
 	});
 
 });
