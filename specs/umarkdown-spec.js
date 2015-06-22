@@ -75,7 +75,7 @@ describe("Markdown", function () {
 	});
 
 	it("should parse h1~h3", function () {
-		expect(ArtisanStack.md.mmdCSSclass('', '')).toBe('');
+		expect(ArtisanStack.md.addMarkdownClass('', '')).toBe('');
 	});
 
 });
