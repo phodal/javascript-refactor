@@ -33,9 +33,11 @@
 
 测试代码质量:
 
-[CodeClimate](https://codeclimate.com/)
+[CodeClimate](https://codeclimate.com/)(ps: [用code climate来clean code与重构](http://www.phodal.com/blog/use-code-climate-clean-code-and-refactor/))
 
-相关文章: [用code climate来clean code与重构](http://www.phodal.com/blog/use-code-climate-clean-code-and-refactor/)
+相关文章: 
+
+[前端技能训练: 重构一](http://www.phodal.com/blog/frontend-improve-refactor-javascript-code/)
 
 ##Setup
 
