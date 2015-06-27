@@ -1,10 +1,6 @@
 #JavaScript Refactor
 
-只有[Skilltree](https://github.com/phodal/skillock)和[Developer学习路线图](https://github.com/phodal/awesome-developer) 是远远不够的。
-
-说明: 在构建[EchoesWorks](https://github.com/phodal/echoesworks)的时候用到了这个库，这是一个用于生成Markdown的Micro Markdown库。
-
-由于对代码重构的最大难题是``没有测试``，在这里我们提供了尽可能高的测试覆盖率。至于功能见测试用例，``测试用例是最好的文档``。
+这是一个用于生成Markdown的Micro Markdown库。由于对代码重构的最大难题是``没有测试``，在这里我们提供了尽可能高的测试覆盖率。 至于功能见测试用例，``测试用例是最好的文档``。
 
 ``注意``: 这里并没有说原来的代码写得不好，只是在这里可以让我们学习重构。
 
@@ -49,17 +45,9 @@
     
     npm test
 
-
-ps: 在ThoughtWorks，写出功能代码只是走了一半的路，``红``->``绿``->``重构``。
-
-
 Enjoy it!
 
 ##订阅
-
-QQ交流群: 321689806
-
-推荐IDE: WebStorm
 
 请到[https://github.com/artisanstack/summary](https://github.com/artisanstack/summary)
 
