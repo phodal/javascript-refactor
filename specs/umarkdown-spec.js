@@ -1,11 +1,4 @@
 describe("Markdown", function () {
-	beforeEach(function () {
-
-	});
-	afterEach(function () {
-
-	});
-
 	it("should parse h1~h3", function () {
 		expect(ArtisanStack.md.parse("#Header1")).toBe("\n<h1>Header1</h1>\n\n");
 		expect(ArtisanStack.md.parse("##Header2")).toBe("\n<h2>Header2</h2>\n\n");
