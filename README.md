@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.org/artisanstack/js-refactor.svg?branch=master)](https://travis-ci.org/artisanstack/js-refactor)
 
-这是一个用于生成Markdown的Micro Markdown库。由于对代码重构的最大难题是``没有测试``，在这里我们提供了尽可能高的测试覆盖率。 至于功能见测试用例，``测试用例是最好的文档``。
-
-``注意``: 这里并没有说原来的代码写得不好，只是在这里可以让我们学习重构。
+这是一个用于生成Markdown的Micro Markdown库。
 
 你要面对的挑战有:
 
