@@ -1,5 +1,7 @@
 #JavaScript Refactor
 
+视频Demo: [JavaScript 重构演示一](http://v.youku.com/v_show/id_XMTI2NjQ0NDAxMg==.html)
+
 [![Build Status](https://travis-ci.org/artisanstack/js-refactor.svg?branch=master)](https://travis-ci.org/artisanstack/js-refactor)
 
 这是一个用于生成Markdown的Micro Markdown库。
