@@ -1,4 +1,4 @@
-#JavaScript Refactor
+# JavaScript Refactor
 
 视频Demo: [JavaScript 重构演示一](http://v.youku.com/v_show/id_XMTI2NjQ0NDAxMg==.html)
 
@@ -37,7 +37,7 @@
 
 [前端技能训练: 重构一](http://www.phodal.com/blog/frontend-improve-refactor-javascript-code/)
 
-##Setup
+## Setup
 
 1.Install 
 
@@ -49,13 +49,13 @@
 
 Enjoy it!
 
-##订阅
+## 订阅
 
 请到[https://github.com/artisanstack/summary](https://github.com/artisanstack/summary)
 
 点击右上角的``watch``即可订阅。
 
-##License##
+## License
 
 © 2015 [Phodal Huang](http://www.phodal.com). This code is distributed under the MIT license. See `LICENSE.txt` in this directory.
 
